@@ -11,12 +11,20 @@ public class DobbelKjedetListeS<T extends Comparable<T>> {
 	//Oppgave 2a
 	public DobbelKjedetListeS(T minVerdi, T maksVerdi) {
 		
-		DobbelNode<T> nyFoerste = new DobbelNode<T>(minVerdi);
-		foerste = nyFoerste;
+//		DobbelNode<T> nyFoerste = new DobbelNode<T>(minVerdi);
+//		foerste = nyFoerste;
+//		
+//		DobbelNode<T> nySiste = new DobbelNode<T>();
+//		nySiste.setElement(maksVerdi);
+//		siste = nySiste;
+//		
+//		antall = 0;
 		
-		DobbelNode<T> nySiste = new DobbelNode<T>();
-		nySiste.setElement(maksVerdi);
-		siste = nySiste;
+		foerste = new DobbelNode<T>(minVerdi);
+		siste = new DobbelNode<T>(maksVerdi);
+		
+		foerste.setNeste(siste);
+		siste.setForrige(foerste);
 		
 		antall = 0;
 	}
@@ -51,27 +59,25 @@ public class DobbelKjedetListeS<T extends Comparable<T>> {
 	
 	//Oppgave 2c
 	public void leggTil(T element) {
-		boolean lagtTil = false;
 		DobbelNode<T> nyNode = new DobbelNode<T>(element);
 		DobbelNode<T> aktuellNode = foerste.getNeste();
 		
-		if(aktuellNode == null) {
-			aktuellNode = nyNode;
-			antall++;
-			lagtTil = true;
+//		if(aktuellNode == null) {
+//			aktuellNode = nyNode;
+//			antall++;
+//			lagtTil = true;
+//		}
+//		else {
+		while(element.compareTo(aktuellNode.getElement()) > 0) {
+			aktuellNode = aktuellNode.getNeste();
 		}
-		else {
-			while(element.compareTo(aktuellNode.getElement()) > 0 && lagtTil) {
-				aktuellNode = aktuellNode.getNeste();
-			}
-			nyNode.setNeste(aktuellNode);
-			nyNode.setForrige(aktuellNode.getForrige());
-			aktuellNode.getForrige().setNeste(nyNode);
-			aktuellNode.setNeste(nyNode);
-			antall++;
-			lagtTil = true;
-		}
-		
+		nyNode.setNeste(aktuellNode);
+		nyNode.setForrige(aktuellNode.getForrige());
+		aktuellNode.getForrige().setNeste(nyNode);
+		aktuellNode.setForrige(nyNode);
+		antall++;
+//		}
+//		
 //		while(lagtTil) {
 //			if(foerste != null) {
 //				aktuellNode = foerste.getNeste();
@@ -88,22 +94,23 @@ public class DobbelKjedetListeS<T extends Comparable<T>> {
 	public T fjern(T element) {
 		T resultat = null;
 		boolean fjernet = false;
-		DobbelNode<T> aktuellNode = foerste.getNeste();
 		
-		while(fjernet && aktuellNode.getElement() != null) {
-			if(element.compareTo(aktuellNode.getElement()) == 0) {
-				resultat = aktuellNode.getElement();
-				aktuellNode.getForrige().setNeste(aktuellNode.getNeste());
-				aktuellNode.getNeste().setForrige(aktuellNode.getForrige());
-				antall--;
-				fjernet = true;
-				
-			}
-			else {
-				aktuellNode = aktuellNode.getNeste();
+		if(antall > 0) {
+		
+			DobbelNode<T> aktuellNode = foerste.getNeste();
+			while(!fjernet && aktuellNode.getNeste() != null) {
+				if(element.compareTo(aktuellNode.getElement()) == 0) {
+					resultat = aktuellNode.getElement();
+					aktuellNode.getForrige().setNeste(aktuellNode.getNeste());
+					aktuellNode.getNeste().setForrige(aktuellNode.getForrige());
+					antall--;
+					fjernet = true;
+				}
+				else {
+					aktuellNode = aktuellNode.getNeste();
+				}
 			}
 		}
-		
 		return resultat;
 	}
 	
@@ -111,11 +118,25 @@ public class DobbelKjedetListeS<T extends Comparable<T>> {
 	public void visListe() {
 		DobbelNode<T> aktuellNode = foerste;
 		
+		System.out.print("{ ");
 		while(aktuellNode != null) {
 			System.out.print(aktuellNode.getElement() + " ");
 			aktuellNode = aktuellNode.getNeste();
 		}
+		System.out.println(" }");
+	}
+	
+	public void listeInformasjon() {
+		DobbelNode<T> aktuellNode = foerste;
+		int antElement = 0;
+		
+		while(aktuellNode != null) {
+			aktuellNode = aktuellNode.getNeste();
+			antElement++;
+		}
 		System.out.println("");
-		System.out.println("Første element: " + foerste.getElement() + "\nSiste element: " + siste.getElement());
+		System.out.println("Antall elementer i listen: " + antElement);
+		System.out.println("Første element: " + foerste.getElement());
+		System.out.println("Siste element: " + siste.getElement());
 	}
 }

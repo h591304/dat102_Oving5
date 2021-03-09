@@ -8,9 +8,9 @@ public class SolveTowers {
 	public static void main(String[] args) {
 		
 		int antDisk1 = 26;
-		TowersOfHanoi numberOfMoves28 = new TowersOfHanoi(antDisk1);
+		TowersOfHanoi numberOfMoves26 = new TowersOfHanoi(antDisk1);
 		Instant foerste = Instant.now();
-		numberOfMoves28.solve();
+		numberOfMoves26.solve();
 		Instant siste = Instant.now();
 		
 		long tidBrukt = siste.getNano()-foerste.getNano();
@@ -21,9 +21,9 @@ public class SolveTowers {
 		System.out.println("");
 		
 		int antDisk2 = 30;
-		TowersOfHanoi numberOfMoves32 = new TowersOfHanoi(antDisk2);
+		TowersOfHanoi numberOfMoves30 = new TowersOfHanoi(antDisk2);
 		Instant foerste1 = Instant.now();
-		numberOfMoves32.solve();
+		numberOfMoves30.solve();
 		Instant siste1 = Instant.now();
 		
 		long tidBrukt1 = siste1.getNano()-foerste1.getNano();

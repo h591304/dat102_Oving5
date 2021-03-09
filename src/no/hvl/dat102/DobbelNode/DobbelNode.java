@@ -6,13 +6,6 @@ public class DobbelNode<T> {
 	private DobbelNode<T> neste;
 	private DobbelNode<T> forrige;
 	
-	public DobbelNode() {
-		element = null;
-		neste = null;
-		forrige = null;
-
-	}
-	
 	public DobbelNode(T element) {
 		this.element = element;
 		neste = null;

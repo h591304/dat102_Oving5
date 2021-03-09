@@ -25,18 +25,22 @@ public class Klient {
 	 * 
 	 **/	
 	
-	int tallListe[] = {0, 1, 2, 3, 4};
+	int min = 0;
+	int max = 7;
 	
-	DobbelKjedetListeS<Integer> liste = new DobbelKjedetListeS<Integer>(0, 4);
+	int tallListe[] = {0, 1, 2, 4, 6};
+	
+	DobbelKjedetListeS<Integer> liste = new DobbelKjedetListeS<Integer>(min, max);
 	
 	for(int i = 0; i < tallListe.length; i++) {
 		liste.leggTil(tallListe[i]);
 	}
 	
-//	//Opprinnelig liste
-//	
-//	System.out.print("Opprinnelig liste: ");
-//	liste.visListe();
+	//Opprinnelig liste
+	System.out.print("Opprinnelig liste: ");
+	liste.visListe();
+	liste.listeInformasjon();
+	System.out.println("\n");
 		
 	/*
 	 * fins(T element) {...}
@@ -45,9 +49,9 @@ public class Klient {
 	 * 
 	 **/
 	
-	Integer element = 0;
+	Integer element = 6;
 	
-	System.out.println("Finnes elementet " + element + "?");
+	System.out.println("Finnes elementet " + element + " ?");
 	boolean fins = liste.fins(element);
 	if(!fins) {
 		System.out.println("Elementet " + element + " fins ikke!");
@@ -55,6 +59,7 @@ public class Klient {
 	else {
 		System.out.println("Elementet " + element + " fins!");
 	}
+	System.out.println("\n");
 	
 	
 //	for(int i = 0; i < tallListe.length; i++) {
@@ -75,47 +80,25 @@ public class Klient {
 	 **/	
 	
 	Integer el1 = 1;
-	Integer el2 = 2;
-	Integer el3 = 3;
-	Integer el4 = 4;
-	Integer el5 = 5;
+	Integer el2 = 3;
+	Integer el3 = 6;
 	
 	System.out.println("Fjerner element: " + el1);
 	liste.fjern(el1);
+	System.out.print("Oppdatert liste: ");
 	liste.visListe();
-	System.out.print("\n\n\n");
+	System.out.println("\n");
 	
 	System.out.println("Fjerner element: " + el2);
 	liste.fjern(el2);
+	System.out.print("Oppdatert liste: ");
 	liste.visListe();
-	System.out.print("\n\n\n");
+	System.out.println("\n");
 	
 	System.out.println("Fjerner element: " + el3);
 	liste.fjern(el3);
+	System.out.print("Oppdatert liste: ");
 	liste.visListe();
-	System.out.print("\n\n\n");
-	
-	System.out.println("Fjerner element: " + el4);
-	liste.fjern(el4);
-	liste.visListe();
-	System.out.print("\n\n\n");
-	
-	System.out.println("Fjerner element: " + el5);
-	liste.fjern(el5);
-	liste.visListe();
-	System.out.print("\n\n\n");
-	
-	
-	/*
-	 * visListe() {...}
-	 * 
-	 * viser alle elementer i listen
-	 * 
-	 **/
-	
-	liste.visListe();
-	
-	
 		
 	}
 
