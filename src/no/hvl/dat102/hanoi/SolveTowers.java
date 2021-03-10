@@ -1,6 +1,5 @@
 package no.hvl.dat102.hanoi;
 
-import java.util.Scanner;
 import java.time.*;
 
 public class SolveTowers {
