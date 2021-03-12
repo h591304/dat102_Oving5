@@ -1,10 +1,10 @@
-package no.hvl.dat102.klient;
+package no.hvl.dat102.klient.liste.kjedet.dobbel;
 
 import no.hvl.dat102.DobbelKjedetListe.*;
 
 //Oppgave 2f
 
-public class Klient {
+public class KlientDobbelKjedetListe {
 
 /**
  * 
