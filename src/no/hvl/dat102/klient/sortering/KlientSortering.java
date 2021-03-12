@@ -62,10 +62,10 @@ public class KlientSortering {
 		tidBrukt = (tidEtter-tidFoer);	// tiden sorteringen tok
 		gjenTid = tidBrukt/antall;
 	
-		System.out.println("Sortering ved Innsetting: ");
+		System.out.println("\t-----Sortering ved Innsetting-----");
 		System.out.println("Før: " + tidFoer + " Etter: " + tidEtter);
 		System.out.println("Antall målinger: " + antall);
-		System.out.println("Gjennomsnittelig tid brukt: " + gjenTid + " nanosekunder!\n");
+		System.out.println("Gjennomsnittelig tid brukt: " + gjenTid + " ms!\n");
 		
 		//Måling for UtvalgsSortering
 		tidFoer = System.currentTimeMillis(); // tiden før sorteringen
@@ -76,10 +76,10 @@ public class KlientSortering {
 		tidBrukt = (tidEtter-tidFoer);	// tiden sorteringen tok
 		gjenTid = tidBrukt/antall;
 	
-		System.out.println("Utvalgssortering: ");
+		System.out.println("\t-----Utvalgssortering-----");
 		System.out.println("Før: " + tidFoer + " Etter: " + tidEtter);
 		System.out.println("Antall målinger: " + antall);
-		System.out.println("Gjennomsnittelig tid brukt: " + gjenTid + " nanosekunder!\n");
+		System.out.println("Gjennomsnittelig tid brukt: " + gjenTid + " ms!\n");
 		
 		//Måling for BobleSortering
 		tidFoer = System.currentTimeMillis(); // tiden før sorteringen
@@ -90,10 +90,10 @@ public class KlientSortering {
 		tidBrukt = (tidEtter-tidFoer);	// tiden sorteringen tok
 		gjenTid = tidBrukt/antall;
 	
-		System.out.println("Boblesortering: ");
+		System.out.println("\t-----Boblesortering-----");
 		System.out.println("Før: " + tidFoer + " Etter: " + tidEtter);
 		System.out.println("Antall målinger: " + antall);
-		System.out.println("Gjennomsnittelig tid brukt: " + gjenTid + " nanosekunder!\n");
+		System.out.println("Gjennomsnittelig tid brukt: " + gjenTid + " ms!\n");
 		
 		//Måling for KvikkSortering
 		tidFoer = System.currentTimeMillis(); // tiden før sorteringen
@@ -104,10 +104,10 @@ public class KlientSortering {
 		tidBrukt = (tidEtter-tidFoer);	// tiden sorteringen tok
 		gjenTid = tidBrukt/antall;
 	
-		System.out.println("Kvikksortering: ");
+		System.out.println("\t-----Kvikksortering-----");
 		System.out.println("Før: " + tidFoer + " Etter: " + tidEtter);
 		System.out.println("Antall målinger: " + antall);
-		System.out.println("Gjennomsnittelig tid brukt: " + gjenTid + " nanosekunder!\n");
+		System.out.println("Gjennomsnittelig tid brukt: " + gjenTid + " ms!\n");
 		
 		// Måling for FletteSortering
 		tidFoer = System.currentTimeMillis(); // tiden før sorteringen
@@ -118,10 +118,52 @@ public class KlientSortering {
 		tidBrukt = (tidEtter-tidFoer);	// tiden sorteringen tok
 		gjenTid = tidBrukt/antall;
 	
-		System.out.println("Flettesortering: ");
+		System.out.println("\t-----Flettesortering-----");
 		System.out.println("Før: " + tidFoer + " Etter: " + tidEtter);
 		System.out.println("Antall målinger: " + antall);
-		System.out.println("Gjennomsnittelig tid brukt: " + gjenTid + " nanosekunder!\n");
+		System.out.println("Gjennomsnittelig tid brukt: " + gjenTid + " ms!\n");
+		
+		//Utføring med kvikkSortNy-metoden og sjekker for ulike MIN-verdier
+		tidFoer = System.nanoTime(); // tiden før sorteringen
+		for (int i = 0; i < antall; i++){
+			KvikkSortering.kvikkSortNy(a[i]); // Måling for kvikksorteringNy
+			}	// slutt tidsmåling
+		tidEtter = System.nanoTime();// tiden etter sorteringen
+		tidBrukt = (tidEtter-tidFoer);	// tiden sorteringen tok
+		gjenTid = tidBrukt/antall;
+		
+		System.out.println("-----KvikksSortNY, måling for MIN-----");
+		System.out.println("Før: " + tidFoer + " Etter: " + tidEtter);
+		System.out.println("Antall målinger: " + antall);
+		System.out.println("Gjennomsnittelig tid brukt: " + gjenTid + " ns!\n");
+		
+		//Oppgave 4c
+		
+		//Opptertter tabell med identiske tall og måler 
+		//tiden det tar å sortere ved bruk av KvikkSortering
+		int ant0 = 10;
+		int n0 = 10;
+		Integer[][] nyTab = new Integer[ant0][n0];
+		
+		// set inn heltallet 1 i alle rekker
+		for (int i = 0; i < nyTab.length; i++) {
+			for (int j = 0; j < nyTab[i].length; j++){
+				nyTab[i][j] = 0; 
+			}
+		}
+		tidFoer = System.nanoTime(); // tiden før sorteringen
+		for (int i = 0; i < ant0; i++){
+			KvikkSortering.kvikkSortering(nyTab[i]); // Måling for kvikksorteringNy
+			}	// slutt tidsmåling
+		tidEtter = System.nanoTime();// tiden etter sorteringen
+		tidBrukt = (tidEtter-tidFoer);	// tiden sorteringen tok
+		gjenTid = tidBrukt/ant0;
+		
+		System.out.println("-----KvikksSortering der alle elementer er like-----");
+		System.out.println("Før: " + tidFoer + " Etter: " + tidEtter);
+		System.out.println("Antall målinger: " + ant0);
+		System.out.println("Gjennomsnittelig tid brukt: " + gjenTid + " ns!");
+		
 	}
 
 }

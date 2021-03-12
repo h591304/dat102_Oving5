@@ -47,19 +47,20 @@ public class KvikkSortering {
 	}
 	
 	public static <T extends Comparable<T>> void kvikkSortNy(T[] data) {
-		kvikkSortNy(data, 0, data.length -1);
+		kvikkSortNy2(data, 0, data.length -1);
 		SorteringVedInnsetting.sorteringVedInnsetting(data);
+		
 	} 
 	
-	static final int MIN = 10;
+	static final int MIN = 20;
 	
-	public static <T extends Comparable<T>> void kvikkSortNy(T[] data, int min, int maks) {
+	public static <T extends Comparable<T>> void kvikkSortNy2(T[] data, int min, int max) {
 		int posPartisjon;
 		
-		if (maks -min + 1 > MIN) {	//antall elementer > MIN ? 
-			posPartisjon = findPartition(data, min, maks);
-			kvikkSortNy(data, min, posPartisjon -1);
-			kvikkSortNy(data, posPartisjon + 1, maks);
+		if (max -min + 1 > MIN) {	//antall elementer > MIN ? 
+			posPartisjon = findPartition(data, min, max);
+			kvikkSortNy2(data, min, posPartisjon -1);
+			kvikkSortNy2(data, posPartisjon + 1, max);
 		}
 	}// metode
 }

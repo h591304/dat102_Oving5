@@ -17,4 +17,5 @@ public class SorteringVedInnsetting {
 			sort[position] = key;
 		}
 	}
+	
 }
