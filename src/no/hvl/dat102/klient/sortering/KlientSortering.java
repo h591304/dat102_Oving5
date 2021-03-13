@@ -37,7 +37,7 @@ public class KlientSortering {
 		System.out.println("MÅLING AV UTFØRINGSTIDER: ");
 		System.out.print("\n");
 		Random tilfeldig = new Random();
-		int n = 16000;
+		int n = 32000;
 		int antall = 10;
 		
 		Integer[][] a = new Integer[antall][n];
@@ -86,7 +86,7 @@ public class KlientSortering {
 		for (int i = 0; i < antall; i++){
 			BobleSortering.bobleSortering(a[i]); // Måling for boblesortering
 			}	// slutt tidsmåling
-		tidEtter = System.currentTimeMillis();// tiden etter sorteringen
+		tidEtter = System.currentTimeMillis();	// tiden etter sorteringen
 		tidBrukt = (tidEtter-tidFoer);	// tiden sorteringen tok
 		gjenTid = tidBrukt/antall;
 	
