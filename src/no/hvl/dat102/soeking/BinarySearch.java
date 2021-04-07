@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class BinarySearch {
 	
 	/**
-	 * Her brukes binærsøking for å søke etter elementet 8 i tabellen øverst i main-metoden
+	 * Her brukes binï¿½rsï¿½king for ï¿½ sï¿½ke etter elementet 8 i tabellen ï¿½verst i main-metoden
 	 * 
-	 * Ved bruk av binærsøking i sorterte tabeller kan man finne hvilke som helst elementer i tobellen
-	 * mer effektivt enn lineærsøking ved å finne midtpunktet, ((min-index)+(max-index))/2, så fortsette
-	 * å eliminere store deler av søkingsområde til man finner elementet.
+	 * Ved bruk av binï¿½rsï¿½king i sorterte tabeller kan man finne hvilke som helst elementer i tobellen
+	 * mer effektivt enn lineï¿½rsï¿½king ved ï¿½ finne midtpunktet, ((min-index)+(max-index))/2, sï¿½ fortsette
+	 * ï¿½ eliminere store deler av sï¿½kingsomrï¿½de til man finner elementet.
 	 * */
 	
 	static int FINNES_IKKE = -1;
@@ -65,13 +65,13 @@ public class BinarySearch {
 		}
 		System.out.println("\n");
 		
-		//Sjekker at dersom min er større en maks, blir -1 returnert ->
+		//Sjekker at dersom min er stï¿½rre en maks, blir -1 returnert ->
 		Integer feilResultat = binarySearch(sortertTab, sortertTab.length-1, 0, 8);
 		System.out.println("Denne skal returnere -1: ");
 		System.out.println(feilResultat);
 		System.out.println("\n");
 		
-		//Sjekker med hvilken som helst brukerinput(int) for å sjekke hvilke heltall
+		//Sjekker med hvilken som helst brukerinput(int) for ï¿½ sjekke hvilke heltall
 		//som finnes i tabellen finnes eller ikke
 		Scanner scnr = new Scanner(System.in);
 		

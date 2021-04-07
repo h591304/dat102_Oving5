@@ -8,7 +8,7 @@ public class KlientDobbelKjedetListe {
 
 /**
  * 
- * Lager et klientprogram for å teste metodene fra DobbeltKjedetListeS-klassen
+ * Lager et klientprogram for Ã¥ teste metodene fra DobbeltKjedetListeS-klassen
  * - fins(T element) {...}
  * - leggTil(T element) {...}
  * - fjern(T element) {...}

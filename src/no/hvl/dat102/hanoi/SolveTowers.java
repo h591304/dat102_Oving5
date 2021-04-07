@@ -15,7 +15,7 @@ public class SolveTowers {
 		long tidBrukt = siste.getNano()-foerste.getNano();
 		
 		System.out.println("Antall disker = " + antDisk1);
-		System.out.println("Tid før: " + foerste.getNano() + "\nTid etter: " + siste.getNano());
+		System.out.println("Tid fÃ¸r: " + foerste.getNano() + "\nTid etter: " + siste.getNano());
 		System.out.println("Total tid brukt: " + tidBrukt + " nanosek!");
 		System.out.println("");
 		
@@ -28,7 +28,7 @@ public class SolveTowers {
 		long tidBrukt1 = siste1.getNano()-foerste1.getNano();
 		
 		System.out.println("Antall disker = " + antDisk2);
-		System.out.println("Tid før: " + foerste1.getNano() + "\nTid etter: " + siste1.getNano());
+		System.out.println("Tid fÃ¸r: " + foerste1.getNano() + "\nTid etter: " + siste1.getNano());
 		System.out.println("Total tid brukt: " + tidBrukt1 + " nanosek!");
 		System.out.println("");
 		

@@ -136,7 +136,7 @@ public class DobbelKjedetListeS<T extends Comparable<T>> {
 		}
 		System.out.println("");
 		System.out.println("Antall elementer i listen: " + antElement);
-		System.out.println("Første element: " + foerste.getElement());
+		System.out.println("FÃ¸rste element: " + foerste.getElement());
 		System.out.println("Siste element: " + siste.getElement());
 	}
 }

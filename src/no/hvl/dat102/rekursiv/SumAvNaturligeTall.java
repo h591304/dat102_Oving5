@@ -10,7 +10,7 @@ public class SumAvNaturligeTall {
 	
 	//Oppgave 1a
 	public static int sum(int n) {
-//		if(n == 1) {		//ikke rekursiv løsning
+//		if(n == 1) {		//ikke rekursiv lï¿½sning
 //			return 1;
 //		}	
 //		else {
@@ -21,7 +21,7 @@ public class SumAvNaturligeTall {
 //			return Sn;
 //		}
 		
-		int Sn = 0;	//rekursiv løsning
+		int Sn = 0;	//rekursiv lï¿½sning
 		if(n == 1) {
 			Sn = 1;
 		}
